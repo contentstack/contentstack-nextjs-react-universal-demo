@@ -1,0 +1,35 @@
+/**
+ * Created by pradip on 7/5/17.
+ */
+const express = require('express')
+const next = require('next')
+const Contentstack = require('contentstack')
+const config = require('./config/index')
+
+const dev = process.env.NODE_ENV || 'production'
+const app = next({ dev })
+const handle = app.getRequestHandler()
+// const _env = require('./config/index');
+
+app.prepare()
+    .then(() => {
+        const server = express()
+        global['Stack'] = Contentstack.Stack({
+            api_key: config.contentstack.api_key,
+            access_token: config.contentstack.access_token,
+            environment: config.contentstack.environment
+        });
+
+        server.get('*', (req, res) => {
+            return handle(req, res)
+        })
+        var port_number = server.listen(process.env.PORT || 4000);
+        server.listen(port_number, (err) => {
+            if (err) throw err
+            console.log('> Ready on http://localhost:4000')
+        })
+    })
+    .catch((ex) => {
+        console.error(ex.stack)
+        process.exit(1)
+    })

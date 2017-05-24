@@ -1,0 +1,8 @@
+.next/*
+.idea/
+.idea/*
+node_modules/*
+/node_modules/*
+theme-using-contentstck-and-nextjs/*
+/theme-using-contentstck-and-nextjs/*
+npm-debug.log
