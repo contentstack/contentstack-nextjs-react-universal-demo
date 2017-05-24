@@ -3,10 +3,10 @@ import Homepage from '../templates/home'
 export default class Home extends React.Component {
   static async getInitialProps () {
       const data = new Promise(resolve => {
-          var  Query = Stack.ContentType("home").Entry("bltb5557cb8bc95fe6c")
+          var  Query = Stack.ContentType("home").Query()
               .includeReference('reference_header','reference_footer')
               .toJSON()
-              .fetch()
+              .find()
               .then(function success(result) {
                   resolve(result);
               }, function error(error) {
@@ -16,7 +16,7 @@ export default class Home extends React.Component {
       return data;
     }
   render () {
-    const page = this.props;
+    const page = this.props[0];
     return <Homepage page={page}/>
 
   }

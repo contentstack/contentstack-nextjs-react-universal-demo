@@ -6,10 +6,10 @@ import Aboutpage from '../templates/about'
 export default class About extends React.Component {
     static async getInitialProps () {
         const data = new Promise(resolve => {
-            var  Query = Stack.ContentType("about").Entry("bltbebc90922e152d39")
+            var  Query = Stack.ContentType("about").Query()
                 .includeReference('reference_header','reference_footer')
                 .toJSON()
-                .fetch()
+                .find()
                 .then(function success(result) {
                     resolve(result);
                 }, function error(error) {
@@ -19,7 +19,7 @@ export default class About extends React.Component {
         return data;
     }
     render () {
-        const page = this.props;
+        const page = this.props[0];
         return <Aboutpage page={page}/>
     }
 }
