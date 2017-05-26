@@ -48,7 +48,6 @@ export default class Contact extends React.Component {
                                 <h2 className="email-id"><a href="#">{page.contact_details.email}</a></h2>
                             </div>
                         </div>
-                        <div className="map-sec"><iframe src={page.contact_details.map}></iframe></div>
                     </main>
                 </div>
                 <footer>

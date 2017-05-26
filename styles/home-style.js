@@ -378,7 +378,7 @@ export default `
     .contact-us{
 
         background-color:#f8f8f8;
-        min-height:560px;
+        padding: 90px 0 100px 0;
         text-align:center;
     }
 

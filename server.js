@@ -4,12 +4,12 @@
 const express = require('express')
 const next = require('next')
 const Contentstack = require('contentstack')
-const config = require('./config/index')
+var env_config = process.env.NODE_ENV || 'development';
+const config = require('./config/'+env_config);
 
-const dev = process.env.NODE_ENV || 'production'
+const dev = process.env.NODE_ENV || 'development'
 const app = next({ dev })
 const handle = app.getRequestHandler()
-// const _env = require('./config/index');
 
 app.prepare()
     .then(() => {
@@ -26,7 +26,7 @@ app.prepare()
         var port_number = server.listen(process.env.PORT || 4000);
         server.listen(port_number, (err) => {
             if (err) throw err
-            console.log('> Ready on http://localhost:4000')
+            console.log('> Ready on environment '+dev+' http://localhost:4000')
         })
     })
     .catch((ex) => {
