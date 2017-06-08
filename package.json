@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "basic-auth-connect": "^1.0.0",
     "child_process": "^1.0.2",
     "contentstack": "^3.1.0",
     "express": "^4.15.2",
