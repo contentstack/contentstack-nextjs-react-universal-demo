@@ -4,7 +4,6 @@
 const express = require('express')
 const next = require('next')
 const Contentstack = require('contentstack')
-const basicAuth = require('basic-auth-connect');
 var env_config = process.env.NODE_ENV || 'development';
 const config = require('./config/'+env_config);
 
@@ -20,7 +19,6 @@ app.prepare()
             access_token: config.contentstack.access_token,
             environment: config.contentstack.environment
         });
-        server.use(basicAuth('built', 'built123'));
         server.get('*', (req, res) => {
             return handle(req, res)
         })
