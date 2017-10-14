@@ -1,8 +1,8 @@
-# Build Website using Next.js and Built.io Contentstack
+# Build Website using Next.js and Contentstack
 
-About Built.io Contentstack: Built.io Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
+About Contentstack: Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
 
-About this project: Create a professional website using Next.js and Built.io Contentstack.
+About this project: Create a professional website using Next.js and Contentstack.
 
 
 ![banner](https://images.contentstack.io/v3/assets/blt50806c1dbb5972f5/bltc2b4aae0f371f9f1/5927f030c82226e46dc9b8c6/download "banner.png")
@@ -15,9 +15,16 @@ About this project: Create a professional website using Next.js and Built.io Con
 You can check the [live demo](https://cs-nextjs-website.herokuapp.com/) to get first-hand experience of the website.
 
 
+##Tutorial
+
+We have created an in-depth tutorial on how you can create your application using Contentstack Javascript SDK. By following the steps given in the tutorial, you will be able to initialise and fetch entries from Contentstack though provided Javascript SDK.
+
+[Build Website using Next.js and Contentstack](https://www.contentstack.com/docs/example-apps/build-a-website-using-next-js-and-contentstack)
+
+
 ## Documentation
 
-Read Built.io Contentstack [docs](https://contentstackdocs.built.io)
+Read Contentstack [docs](https://www.contentstack.com/docs/)
 
 Learn about [Next.js](https://learnnextjs.com/)
 
