@@ -15,7 +15,7 @@ About this project: Create a professional website using Next.js and Contentstack
 You can check the [live demo](https://cs-nextjs-website.herokuapp.com/) to get first-hand experience of the website.
 
 
-##Tutorial
+## Tutorial
 
 We have created an in-depth tutorial on how you can create your application using Contentstack Javascript SDK. By following the steps given in the tutorial, you will be able to initialise and fetch entries from Contentstack though provided Javascript SDK.
 
