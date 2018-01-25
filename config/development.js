@@ -1,7 +1,7 @@
 module.exports = {
   contentstack: {
-    api_key: 'Please Enter your stack api-key',
-    access_token: 'Please Enter your stack access-token',
+    api_key: 'blt50806c1dbb5972f5',
+    access_token: 'blt2e51b1c00a53540f',
     environment: 'development'
   }
 }
