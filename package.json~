@@ -1,0 +1,25 @@
+{
+  "name": "Next-Demot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "basic-auth-connect": "^1.0.0",
+    "child_process": "^1.0.2",
+    "contentstack": "^3.4.0",
+    "express": "^4.15.2",
+    "fs": "0.0.1-security",
+    "isomorphic-unfetch": "^1.0.0",
+    "next": "^4.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "shorti": "^1.2.6"
+  }
+}
