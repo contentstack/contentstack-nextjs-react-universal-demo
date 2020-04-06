@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../components/layout";
-import homestyle from "../styles/home-style";
 class Contactpage extends React.Component {
   render() {
     return (
@@ -9,7 +8,6 @@ class Contactpage extends React.Component {
         footer={this.props.page.reference_footer[0]}
       >
         <div className="contact-us">
-          <style dangerouslySetInnerHTML={{ __html: homestyle }} />
           <div className="contact-us-page">
             <div id="">
               <h1>{this.props.page.title}</h1>

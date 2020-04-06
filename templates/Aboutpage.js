@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../components/layout";
-import homestyle from "../styles/home-style";
 class Aboutpage extends React.Component {
   render() {
     const aboutSec = this.props.page.about.about_content.map(
@@ -14,7 +13,7 @@ class Aboutpage extends React.Component {
               <li>
                 <h3>{aboutSec.title}</h3>
                 <p>{aboutSec.description}</p>
-                <button
+                {/* <button
                   className="btn"
                   style={{
                     backgroundColor: " #008CBA",
@@ -23,9 +22,9 @@ class Aboutpage extends React.Component {
                     fontSize: "16px",
                     
                   }}
-                >
+                > */}
                   <a to={aboutSec.cta.href}>{aboutSec.cta.title}</a>
-                </button>
+                {/* </button> */}
               </li>
             </ul>
           </div>
@@ -37,7 +36,6 @@ class Aboutpage extends React.Component {
         header={this.props.page.reference_header[0]}
         footer={this.props.page.reference_footer[0]}
       >
-        <style dangerouslySetInnerHTML={{ __html: homestyle }} />
         <div className="about-page">
           <div id="" className="center head">
             <h1>{this.props.page.title}</h1>

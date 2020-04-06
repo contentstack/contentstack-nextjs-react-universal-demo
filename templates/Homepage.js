@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../components/layout";
-import homestyle from "../styles/home-style";
 class Homepage extends React.Component {
   render() {
     const herobanner = this.props.page.hero_banner.map((item, index) => {
@@ -41,7 +40,6 @@ class Homepage extends React.Component {
         header={this.props.page.reference_header[0]}
         footer={this.props.page.reference_footer[0]}
       >
-        <style dangerouslySetInnerHTML={{ __html: homestyle }} />
         <div className="wrapper">
           <div>
             <div id="">
