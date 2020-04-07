@@ -7,24 +7,14 @@ class Aboutpage extends React.Component {
         return (
           <div className="thumbnail-bx clearfix" key={index}>
             <div className="about-content-left">
-              <img src={aboutSec.image.url} />
+              <img src={aboutSec.image.url} alt={aboutSec.image.filename} />
             </div>
             <ul className="about-content-right">
               <li>
                 <h3>{aboutSec.title}</h3>
                 <p>{aboutSec.description}</p>
-                {/* <button
-                  className="btn"
-                  style={{
-                    backgroundColor: " #008CBA",
-                    borderRadius: "10px",
-                    transitionDuration: " 0.4s",
-                    fontSize: "16px",
-                    
-                  }}
-                > */}
-                  <a to={aboutSec.cta.href}>{aboutSec.cta.title}</a>
-                {/* </button> */}
+                  <a to={aboutSec.cta.href} className="cta-link">{aboutSec.cta.title}</a>
+              
               </li>
             </ul>
           </div>

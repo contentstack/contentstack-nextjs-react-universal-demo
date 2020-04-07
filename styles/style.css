@@ -253,7 +253,7 @@
         border-radius: 50%;
         width: 36px;
         height: 36px;
-        vertical-align: middle;
+        /* vertical-align: middle; */
         padding-top: 5px;
         text-align: center;
     }
@@ -370,7 +370,12 @@
         font-weight: 300;
         margin-bottom: 25px;
     }
-
+    .cta-link{
+        color: blue;
+    }
+    .cta-link:hover{
+        color: hotpink;
+    }
     /* contact us page css start here*/
 
     .contact-us{
