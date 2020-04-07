@@ -11,7 +11,7 @@ About this project: Create a professional website using Next.js and Contentstack
 
 ## Live Demo
 
-You can check the [live demo](https://cs-nextjs-website.now.sh/) to get first-hand experience of the website.
+You can check the [live demo](https://sample-apps-nextjs-demo.now.sh/) to get first-hand experience of the website.
 
 
 ## Tutorial
