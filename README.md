@@ -1,30 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+# Build Website using Next.js and Contentstack
 
-## Getting Started
+About Contentstack: Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
 
-First, run the development server:
+About this project: Create a professional website using Next.js and Contentstack.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![banner](https://images.contentstack.io/v3/assets/blt50806c1dbb5972f5/blt7447b980bb61a902/5a7af12bfca062790b845fd9/download "banner.png")
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Live Demo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can check the [live demo](https://sample-apps-nextjs-demo-5y8xricdj.now.sh/) to get first-hand experience of the website.
 
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on ZEIT Now
+## Tutorial
 
-The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We have created an in-depth tutorial on how you can create your application using Contentstack Javascript SDK. By following the steps given in the tutorial, you will be able to initialise and fetch entries from Contentstack though provided Javascript SDK.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[Build Website using Next.js and Contentstack](https://www.contentstack.com/docs/example-apps/build-a-website-using-next-js-and-contentstack)
+
+
+## Documentation
+
+Read Contentstack [docs](https://www.contentstack.com/docs/)
+
+Learn about [Next.js](https://learnnextjs.com/)
+
+
+
+
+
+
+
+
+
