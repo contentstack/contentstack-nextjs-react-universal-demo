@@ -370,6 +370,15 @@
         font-weight: 300;
         margin-bottom: 25px;
     }
+    .cta-link{
+        color: blue;
+    }
+    .cta-link:hover{
+        color: hotpink;
+    } 
+    .cta-link:visited{
+        color: green;
+    }
 
     /* contact us page css start here*/
 

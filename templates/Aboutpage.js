@@ -13,18 +13,8 @@ class Aboutpage extends React.Component {
               <li>
                 <h3>{aboutSec.title}</h3>
                 <p>{aboutSec.description}</p>
-                {/* <button
-                  className="btn"
-                  style={{
-                    backgroundColor: " #008CBA",
-                    borderRadius: "10px",
-                    transitionDuration: " 0.4s",
-                    fontSize: "16px",
-                    
-                  }}
-                > */}
-                  <a to={aboutSec.cta.href}>{aboutSec.cta.title}</a>
-                {/* </button> */}
+
+                  <a  className="cta-link" to={aboutSec.cta.href}>{aboutSec.cta.title}</a>
               </li>
             </ul>
           </div>
