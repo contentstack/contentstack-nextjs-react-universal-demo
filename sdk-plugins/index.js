@@ -4,7 +4,7 @@ export default {
     const data = new Promise(resolve => {
       const Stack = Contentstack.Stack({
         api_key: process.env.api_key,
-        access_token: process.env.access_token,
+        access_token: process.env.delivery_token,
         environment: process.env.environment
       });
       Stack.ContentType(entry)
