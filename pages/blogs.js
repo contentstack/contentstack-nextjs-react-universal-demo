@@ -6,7 +6,6 @@ class Blogs extends React.Component {
   static async getInitialProps() {
     try {
       const result = await Stack.getEntry("blogs");
-      console.log(result);
       return { data: result[0][0] };
     } catch (error) {
       console.error(error);

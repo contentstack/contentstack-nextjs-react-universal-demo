@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../components/layout";
 class Homepage extends React.Component {
   render() {
-    console.log(this.props.page);
     const herobanner = this.props.page.hero_banner.map((item, index) => {
       return (
         <div key={index}>

@@ -38,7 +38,6 @@ class Blogpage extends React.Component {
         }
       });
     };
-    console.log(this.props.page);
     return (
       <Layout
         header={this.props.page.reference_header[0]}
