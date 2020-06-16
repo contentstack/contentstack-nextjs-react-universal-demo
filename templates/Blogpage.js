@@ -12,13 +12,15 @@ class Blogpage extends React.Component {
               <img
                 src={image.carousel_image_1.file.url}
                 alt={image.carousel_image_1.file.filename}
-                width="300px"
+                width="200px"
                 height="350px"
               />
-              <h4 className="carousel-title">
-                {image.carousel_image_1.single_line}
-              </h4>
-              <p className="legend">{image.carousel_image_1.multi_line}</p>
+              <div className="carousel-title-div">
+                <h4 className="carousel-title">
+                 <strong>{image.carousel_image_1.single_line}</strong> 
+                </h4>
+              </div>
+              <p className="carousel-description">{image.carousel_image_1.multi_line}</p>
             </div>
           );
         } else {
@@ -27,12 +29,16 @@ class Blogpage extends React.Component {
               <img
                 src={image.carousel_image_2.file.url}
                 alt={image.carousel_image_2.file.filename}
-                width="300px"
+                width="200px"
                 height="350px"
               />
-              <h4 className="carousel-title">
-                {image.carousel_image_2.single_line}
-              </h4>
+              <div className="carousel-title-div">
+                <h4 className="carousel-title">
+                  <strong>
+                  {image.carousel_image_2.single_line}
+                  </strong>
+                </h4>
+              </div>
             </div>
           );
         }
@@ -43,29 +49,41 @@ class Blogpage extends React.Component {
         header={this.props.page.reference_header[0]}
         footer={this.props.page.reference_footer[0]}
       >
-        <Carousel showArrows={true} showThumbs={false}>
+        <Carousel
+          showArrows={true}
+          showThumbs={false}
+          infiniteLoop={true}
+          thumbWidth="200px"
+          showArrows={true}
+        >
           {renderCarousel(this.props.page)}
         </Carousel>
         <div className="wrap">
           <div className="main-container">
             <div className="blog-post">
-              <h2 style={{marginLeft:"24px"}}>{this.props.page.title}</h2>
+              <h1 className="blog-title">{this.props.page.title}</h1>
             </div>
             <div className="blog-content">
               {this.props.page.blog_body.map((elm, id) => {
                 if (elm.hasOwnProperty("blog_content_rte")) {
                   return (
-                    <div
-                      key={id}
-                      dangerouslySetInnerHTML={{
-                        __html: elm.blog_content_rte.rich_text_editor,
-                      }}
-                    ></div>
+                    <div key={id}>
+                      <h2 className="blogpost-title">
+                        {elm.blog_content_rte.single_line}
+                      </h2>
+
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: elm.blog_content_rte.rich_text_editor,
+                        }}
+                      ></div>
+                    </div>
                   );
                 }
               })}
             </div>
             <div className="blogger-details">
+              <h3 className="blog-details-title">Relative Blogs</h3>
               {this.props.page.blog_body.map((element, id) => {
                 if (element.hasOwnProperty("other_blogger_post")) {
                   return (
@@ -78,10 +96,10 @@ class Blogpage extends React.Component {
                       />
                       <div className="cardContainer">
                         <h4>
-                          <b>{element.other_blogger_post.single_line}</b>
+                          <strong>{element.other_blogger_post.single_line}</strong>
                         </h4>
                         <p>{element.other_blogger_post.multi_line}</p>
-                        <a href={element.other_blogger_post.link.href}>
+                        <a href={element.other_blogger_post.link.href} className="blog-post-a">
                           {element.other_blogger_post.link.title}
                         </a>
                       </div>
