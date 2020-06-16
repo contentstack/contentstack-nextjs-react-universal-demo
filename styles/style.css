@@ -57,6 +57,7 @@
     body {
         font-family: 'Open Sans', sans-serif;
         line-height: 1.4;
+        overflow-x:hidden ;
     }
 
     * {
@@ -520,9 +521,16 @@
             height: 300px;
         }
     }
-
+    .blog-content{
+        position: absolute;
+        left: 2%;
+        top: 150px;
+        width: 70%;
+        text-align: justify;
+    
+    }
     .blog-post {
-        margin-top: 10%;
+        margin-top: 5%;
     }
 
     .main-blog-div {
@@ -548,6 +556,7 @@
 
     .main-container {
         position: relative;
+        height: auto;
         z-index: 10;
         padding: 1px 0;
         background-color: #fff;
@@ -565,7 +574,8 @@
     .author-section, .author-details {
         margin-top: 10px;
     }
-    .author-details{
+
+    .author-details {
         position: relative;
         top: 8px;
     }
@@ -583,28 +593,67 @@
         color: grey;
         font-size: 18px;
     }
-    .blog-directive{
+
+    .blog-directive {
         margin-left: 180px;
     }
-    .blog-biref-description{
+
+    .blog-biref-description {
         width: 60%;
         text-align: justify;
     }
-    .blog-images-display{
+
+    .blog-images-display {
         position: absolute;
         top: 0px;
-        right:0px;
+        right: 0px;
     }
-    .blog_body{
+
+    .blog_body {
         position: relative;
         top: 24px;
     }
-    .author-social-links{
+
+    .author-social-links {
         border-top: 1px solid rgb(136, 133, 133);
         width: 300px;
         height: 30px;
     }
-    .author-social-links p{
+
+    .author-social-links p {
         display: inline-block;
         margin: 5px;
+    }
+
+    .carousel-title {
+        position: absolute;
+        bottom: 86px;
+        left: 50%;
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 20%;
+        border-radius: 5px;
+        margin: 12px;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .cardImg {
+        border-radius: 5px 5px 0 0;
+    }
+
+    .cardContainer {
+        padding: 2px 16px;
+    }
+
+    .blogger-details {
+        position: relative;
+        right: 0px;
+        left: 78%;
     }

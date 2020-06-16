@@ -5,7 +5,7 @@ import Aboutpage from "../templates/Aboutpage";
 class About extends React.Component {
   static async getInitialProps() {
     try {
-      const result = await Stack.getEntry("next_about");
+      const result = await Stack.getEntry("about");
       return { data: result[0][0] };
     } catch (error) {
       console.error(error);

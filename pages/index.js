@@ -5,7 +5,7 @@ import Homepage from "../templates/Homepage"
 class Home extends React.Component {
   static async getInitialProps() {
     try {
-      const result = await Stack.getEntry("next_home");
+      const result = await Stack.getEntry('home');
       return { data: result[0][0] };
     } catch (error) {
       console.error(error);
