@@ -1,24 +1,24 @@
 const Contentstack = require("contentstack")
 export default {
-  getEntry(entry) {
-    const data = new Promise(resolve => {
+  getEntry(ctUid) {
+    return new Promise(resolve => {
       const Stack = Contentstack.Stack({
         api_key: process.env.api_key,
-        access_token: process.env.delivery_token,
+        delivery_token: process.env.delivery_token,
         environment: process.env.environment
       });
-      Stack.ContentType(entry)
+      Stack.ContentType(ctUid)
         .Query()
         .includeReference("reference_header", "reference_footer")
         .toJSON()
         .find()
         .then(
-          function success(result) {              
+          function success(result) {   
             resolve(result);
           },
           function error(error) {}
         );
     });
-    return data;
+   
   }
 };

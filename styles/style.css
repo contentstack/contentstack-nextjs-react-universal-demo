@@ -103,13 +103,13 @@
         text-decoration: none;
     }
 
-    .logo .logo-text {
+    .logo .logoText {
         display: inline-block;
         padding-top: 14px;
         font-weight: 300;
     }
 
-    .logo .logo-text i {
+    .logo .logoText i {
         background: #23b9d0;
         color: #053740;
         border-radius: 50%;
@@ -120,12 +120,12 @@
         padding: 11px 0 0;
     }
 
-    .nav-menu {
+    .navMenu {
         position: relative;
         float: right;
     }
 
-    .nav-menu a {
+    .navMenu a {
         position: relative;
         display: inline-block;
         vertical-align: top;
@@ -139,29 +139,29 @@
         font-weight: 300;
     }
 
-    .hero-banner {
+    .heroBanner {
         padding: 0px;
         background-color: #dbdbdb;
     }
 
-    .hero-banner h1 {
+    .heroBanner h1 {
         text-transform: uppercase;
         color: #23b9d0;
     }
 
-    .hero-banner h3 {
+    .heroBanner h3 {
         color: rgba(255, 255, 255, 0.6);
         font-weight: 300;
     }
 
-    .hero-banner li {
+    .heroBanner li {
         width: 100%;
         height: 670px;
         overflow: hidden;
         position: relative;
     }
 
-    .hero-banner li:before {
+    .heroBanner li:before {
         content: '';
         width: 100%;
         height: 100%;
@@ -175,7 +175,7 @@
         height: auto;
     }
 
-    .banner-content {
+    .bannerContent {
         position: absolute;
         width: 100%;
         max-width: 600px;
@@ -214,7 +214,7 @@
         font-size: 15px;
     }
 
-    .port-bx {
+    .portBx {
         width: 48%;
         float: left;
         background: #fff;
@@ -223,16 +223,16 @@
         box-shadow: 0 1px 6px rgba(5, 55, 64, 0.8);
     }
 
-    .port-bx h3 {
+    .portBx h3 {
         color: #23b9d0;
         text-transform: uppercase;
     }
 
-    .port-bx:nth-child(even) {
+    .portBx:nth-child(even) {
         margin-left: 3%;
     }
 
-    .port-bx .image {
+    .portBx .image {
         float: left;
         width: 26%;
         float: left;
@@ -246,12 +246,12 @@
         font-size: 40px;
     }
 
-    .port-bx .image img {
+    .portBx .image img {
         width: 100%;
         height: auto;
     }
 
-    .port-bx .px-desc {
+    .portBx .pxDesc {
         float: right;
         width: 72%;
     }
@@ -328,7 +328,7 @@
         background-color: #f8f8f8;
     }
 
-    .about-page {
+    .aboutPage {
         width: 100%;
         max-width: 960px;
         margin: 78px auto 0;
@@ -336,7 +336,7 @@
         z-index: 5;
     }
 
-    .about-page .head h1 {
+    .aboutPage .head h1 {
         font-size: 30px;
         padding: 30px 0 10px 0;
         color: #25BAD0;
@@ -345,11 +345,11 @@
         text-transform: uppercase;
     }
 
-    .about-page .about-content {
+    .aboutPage .aboutContent {
         margin-bottom: 25px;
     }
 
-    .about-page .about-content-right {
+    .aboutPage .aboutContentRight {
         width: 61%;
         text-align: left;
         padding: 20px 20px;
@@ -357,28 +357,28 @@
         float: right;
     }
 
-    .about-page .about-content-left h2 {
+    .aboutPage .aboutContentLeft h2 {
         font-size: 18px;
         font-family: 'Open Sans', sans-serif;
         font-weight: 500;
         margin-bottom: 5px;
     }
 
-    .about-page .about-content-left p {
+    .aboutPage .aboutContentLeft p {
         font-size: 14px;
         font-family: 'Open Sans', sans-serif;
         font-weight: 300;
         color: #666;
     }
 
-    .about-page .about-content-left {
+    .aboutPage .aboutContentLeft {
         width: 37%;
         float: left;
         line-height: 0;
         position: relative;
     }
 
-    .about-page .about-content-left:before {
+    .aboutPage .aboutContentLeft:before {
         content: '';
         width: 100%;
         height: 100%;
@@ -387,25 +387,25 @@
         z-index: 1;
     }
 
-    .about-content-left img {
+    .aboutContentLeft img {
         width: 100%;
         height: auto;
         max-height: 250px;
     }
 
-    .about-page .thumbnail-content {
+    .aboutPage .thumbnailContent {
         width: 100%;
         padding: 25px 0;
     }
 
-    .about-page .thumbnail-bx {
+    .aboutPage .thumbnailBx {
         width: 100%;
         float: left;
         margin: 0 1% 20px;
         box-shadow: 0 1px 6px rgba(5, 55, 64, 0.8);
     }
 
-    .about-page .thumbnail-bx h3 {
+    .aboutPage .thumbnailBx h3 {
         font-size: 16px;
         color: #25BAD0;
         font-family: 'Open Sans', sans-serif;
@@ -414,30 +414,30 @@
         margin-bottom: 5px;
     }
 
-    .about-page .thumbnail-bx p {
+    .aboutPage .thumbnailBx p {
         font-size: 16px;
         font-family: 'Open Sans', sans-serif;
         font-weight: 300;
         margin-bottom: 25px;
     }
 
-    .cta-link {
+    .ctaLink {
         color: blue;
     }
 
-    .cta-link:hover {
+    .ctaLink:hover {
         color: hotpink;
     }
 
     /* contact us page css start here*/
 
-    .contact-us {
+    .contactUs {
         background-color: #f8f8f8;
         padding: 90px 0 100px 0;
         text-align: center;
     }
 
-    .contact-us .contact-us-page {
+    .contactUs .contactUsPage {
         width: 100%;
         margin: 78px auto 0;
         color: #25BAD0;
@@ -446,7 +446,7 @@
         padding: 0 0 40px 0;
     }
 
-    .contact-us .contact-us-page h1 {
+    .contactUs .contactUsPage h1 {
         font-family: 'Open Sans', sans-serif;
         font-weight: 500;
         text-transform: uppercase;
@@ -454,7 +454,7 @@
         margin-bottom: 25px;
     }
 
-    .contact-us .address {
+    .contactUs .address {
         width: 560px;
         margin: 0 auto;
         padding: 50px;
@@ -462,7 +462,7 @@
         box-shadow: 0 0px 6px rgba(5, 55, 64, 0.8);
     }
 
-    .contact-us .address h2 {
+    .contactUs .address h2 {
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         font-size: 18px;
@@ -470,17 +470,17 @@
         display: inline-block;
     }
 
-    .contact-us .address .email-id {
+    .contactUs .address .emailId {
         display: block;
     }
 
-    .contact-us .address .email-id a {
+    .contactUs .address .emailId a {
         color: #25BAD0;
         display: block;
         text-decoration: underline;
     }
 
-    .contact-us .map-sec {
+    .contactUs .mapSec {
         width: 100%;
         height: 450px;
         margin: 0 auto;
@@ -489,7 +489,7 @@
         position: relative;
     }
 
-    .contact-us .map-sec:before {
+    .contactUs .mapSec:before {
         content: '';
         width: 100%;
         height: 100%;
@@ -497,7 +497,7 @@
         position: absolute;
     }
 
-    .contact-us .map-sec iframe {
+    .contactUs .mapSec iframe {
         width: 100%;
         height: 100%;
     }
@@ -512,21 +512,26 @@
         .hero-banner li {
             height: 400px;
         }
-        .port-bx {
+        .portBx {
             width: 100%;
             max-width: 500px;
             float: none;
             margin: 25px auto;
         }
-        .port-bx:nth-child(even) {
+        .portBx:nth-child(even) {
             margin: 0 auto;
         }
     }
 
     @media screen and (max-width: 600px) {
-        .hero-banner li {
+        .heroBanner li {
             height: 300px;
         }
+    }
+    /* blog page css starts from here */
+    
+    .blogListcontainer{
+        width: 100%;
     }
 
     .blog-content {
@@ -552,7 +557,7 @@
         box-shadow: 5px 10px 18px #888888;
     }
 
-    .blog-title, .blogpost-title, .blog-details-title, h4 {
+    .blogTitle, .blogpostTitle, .blog-details-title, h4 {
         /* font-size: 30px; */
         padding: 30px 0 10px 0;
         color: #25BAD0;
@@ -566,94 +571,126 @@
         color: black;
     }
 
-    .blog-title {
-        text-align: center;
-    }
-    .blog-details-title{
+    .blogDetailsTitle{
         padding-bottom: 32px;
     }
 
-    .blogpost-title {
+    .blogpostTitle {
         left: 0px;
         font-size: 24px;
     }
 
-    .blog-summary {
+    .blogSummary {
         margin-left: 180px;
     }
 
-    .main-container {
+    .mainContainer {
         z-index: 10;
         padding: 1px 0;
         background-color: #fff;
         box-shadow: 0 -11px 7px -4px rgba(0, 0, 0, .5);
     }
 
-    .carousel-title-div {
-        position: absolute;
-        bottom: 86px;
-        left: 30%;
-        width: 40%;
-        height: 32px;
-        border-radius: 8px;
-    }
- .control-arrow{
-     font-size: 42px;
-     padding: 15px;
- }
-    .carousel-title {
-        color: white;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 500;
-    }
-
-    .carousel-description {
-        position: relative;
-        bottom: 40px;
-        color: white;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 500;
-    }
-
-    .card {
-        display: inline-block;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-        width: 20%;
-        border-radius: 5px;
-        margin: 12px;
-    }
-
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    .cardImg {
-        border-radius: 5px 5px 0 0;
-    }
-
-    .cardContainer {
-        padding: 2px 16px;
-    }
-
-    .blogger-details {
-        position: relative;
-        right: 0px;
-        display: inline-block;
-        top: 42px;
-        text-align: center;
+    .heroBanner {
+        width: 100%;
+      }
+      
+      .bannerImage {
+        width: 100%;
         height: 550px;
-        border-top: 1px solid rgb(180, 173, 173);
-    }
 
-    .blog-post-a {
+      }
+      
+      .blogTitle {
+        padding: 30px 0 10px 0;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      
+      .bloglistContainer {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        margin: 0 20%;
+      }
+      
+      .blogContent {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+      }
+      
+      .bloglist {
+        height: 260px;
+        width: 800px;
+        margin: 5px;
+        padding: 10px;
+        border-bottom: 1px solid rgb(230, 224, 224);
+      }
+      
+      .bloglist:after {
+        content: " ";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+      }
+      
+      .leftSection {
+        float: left;
+        width: 40%;
+        margin: 0 0 0 0;
+      }
+      
+      .rightSection {
+        float: left;
+        width: 60%;
+      }
+      
+      .listImages {
+        height: 240px;
+        width: 95%;
+      }
+      
+      .postLink {
+        display: block;
         text-decoration: none;
-        color: #25BAD0;
-    }
-
-    .blogContentImage {
-        width: 68%;
-        vertical-align: middle;
-        height: 400px;
-        margin: 0px 15% 16px 15%;
-    }
+        color: #533dc0;
+        cursor: pointer;
+      }
+      
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+      .otroBlockquote {
+        width: 70%;
+        margin: 50px auto;
+        color: #555555;
+        padding: 1.2em 30px 1.2em 75px;
+        border-left: 8px solid #25BAD0;
+        line-height: 1.6;
+        position: relative;
+        background: #EDEDED;
+      }
+      
+      .blogpostImage {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+        margin-top: -25px;
+        padding: 12px 12px;
+      }
+      
+      .otroBlockquote::before {
+        position: absolute;
+        left: 10px;
+        top: -10px;
+      }
+      
+      .otroBlockquote::after {
+        content: '';
+      }
+      
+      .quoteIcon {
+        margin-left: -70px;
+        margin-bottom: -42px;
+      }

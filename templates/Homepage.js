@@ -8,7 +8,7 @@ class Homepage extends React.Component {
           <ul>
             <li>
               <img className="fullwidth" src={item.image.url} />
-              <div className="banner-content">
+              <div className="bannerContent">
                 <h1>{item.title}</h1>
                 <h3>{item.description}</h3>
               </div>
@@ -20,14 +20,14 @@ class Homepage extends React.Component {
     const section_heading = this.props.page.section_heading.heading.map(
       (heading, index) => {
         return (
-          <div key={index} className="port-bx clearfix">
+          <div key={index} className="portBx clearfix">
             <div className="image">
               <i
                 className={"fa " + heading.fontawesome_icon}
                 aria-hidden="true"
               ></i>
             </div>
-            <div className="px-desc">
+            <div className="pxDesc">
               <h3>{heading.title}</h3>
               <p>{heading.description}</p>
             </div>
@@ -43,7 +43,7 @@ class Homepage extends React.Component {
         <div className="wrapper">
           <div>
             <div id="">
-              <div className="hero-banner" id="">
+              <div className="heroBanner" id="">
                 {herobanner}
               </div>
               <div className="portpolio clearfix">

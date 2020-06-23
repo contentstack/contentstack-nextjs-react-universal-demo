@@ -5,15 +5,15 @@ class Aboutpage extends React.Component {
     const aboutSec = this.props.page.about.about_content.map(
       (aboutSec, index) => {
         return (
-          <div className="thumbnail-bx clearfix" key={index}>
-            <div className="about-content-left">
+          <div className="thumbnailBx clearfix" key={index}>
+            <div className="aboutContentLeft">
               <img src={aboutSec.image.url} alt={aboutSec.image.filename} />
             </div>
-            <ul className="about-content-right">
+            <ul className="aboutContentRight">
               <li>
                 <h3>{aboutSec.title}</h3>
                 <p>{aboutSec.description}</p>
-                  <a to={aboutSec.cta.href} className="cta-link">{aboutSec.cta.title}</a>
+                  <a to={aboutSec.cta.href} className="ctaLink">{aboutSec.cta.title}</a>
               
               </li>
             </ul>
@@ -26,11 +26,11 @@ class Aboutpage extends React.Component {
         header={this.props.page.reference_header[0]}
         footer={this.props.page.reference_footer[0]}
       >
-        <div className="about-page">
+        <div className="aboutPage">
           <div id="" className="center head">
             <h1>{this.props.page.title}</h1>
           </div>
-          <div className="thumbnail-content">
+          <div className="thumbnailContent">
             <div className="">{aboutSec}</div>
             <div className="clearfix"></div>
           </div>

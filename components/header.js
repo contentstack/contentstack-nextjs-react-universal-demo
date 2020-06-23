@@ -11,12 +11,12 @@ class Header extends React.Component {
     return (
         <header>
           <a className="logo" href="/">
-            <span className="logo-text">
+            <span className="logoText">
               <i className="fa fa-file-code-o" aria-hidden="true"></i>
               {this.props.header.logo_title}
             </span>
           </a>
-          <nav className="nav-menu">{nav}</nav>
+          <nav className="navMenu">{nav}</nav>
         </header>
     );
   }
