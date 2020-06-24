@@ -1,5 +1,9 @@
+/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/prop-types */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import Layout from "../components/layout";
+
 class Contactpage extends React.Component {
   render() {
     return (
@@ -9,7 +13,7 @@ class Contactpage extends React.Component {
       >
         <div className="contactUs">
           <div className="contactUsPage">
-            <div >
+            <div>
               <h1>{this.props.page.title}</h1>
             </div>
             <div className="address">

@@ -1,25 +1,32 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable consistent-return */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-danger */
+/* eslint-disable import/extensions */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/jsx-no-duplicate-props */
 import React from "react";
 import Layout from "../components/layout.js";
-var Carousel = require("react-responsive-carousel").Carousel;
+
+const { Carousel } = require("react-responsive-carousel");
 
 class BlogTemplate extends React.Component {
   render() {
-    let result = this.props.page.result;
+    const { result } = this.props.page;
     function createContent(data, idx) {
-      return <div key={idx} dangerouslySetInnerHTML={{ __html: data }}></div>;
+      return <div key={idx} dangerouslySetInnerHTML={{ __html: data }} />;
     }
     function createCarousel(images, id) {
       return (
-          <div style={{padding: '12px 12px'}} key={id}>
-        <Carousel
-          showArrows={true}
-          showThumbs={false}
-          infiniteLoop={true}
-          thumbWidth="200px"
-          showArrows={true}
-        >
-          {images.map((image, idx) => {
-            return (
+        <div style={{ padding: '12px 12px' }} key={id}>
+          <Carousel
+            showArrows
+            showThumbs={false}
+            infiniteLoop
+            thumbWidth="200px"
+            showArrows
+          >
+            {images.map((image, idx) => (
               <div key={idx} height="200px" width="200px">
                 <img
                   src={image.url}
@@ -28,9 +35,8 @@ class BlogTemplate extends React.Component {
                   height="350px"
                 />
               </div>
-            );
-          })}
-        </Carousel>
+            ))}
+          </Carousel>
         </div>
       );
     }
@@ -50,7 +56,7 @@ class BlogTemplate extends React.Component {
           className="embededCodes"
           key={idx}
           dangerouslySetInnerHTML={{ __html: data }}
-        ></div>
+        />
       );
     }
 
@@ -71,22 +77,20 @@ class BlogTemplate extends React.Component {
           <div className="blogContent">
             <h2 className="blogTitle">{result.title}</h2>
             {result.modular_blocks[0].blog_post_page.blog_post.map(
-              (post, id) => {
-                return Object.entries(post).map((data, idx) => {
-                  if (data[0] === "blog_content" && data[1] !== null) {
-                    return createContent(data[1].blog_post_content, idx);
-                  }
-                  if (data[0] === "image_carousel" && data[1] !== null) {
-                    return createCarousel(data[1].image, idx);
-                  }
-                  if (data[0] === "blog_quotes" && data[1] !== null) {
-                    return createQuotes(data[1].quote, idx);
-                  }
-                  if (data[0] === "social_network_embed" && data[1] !== null) {
-                    return createSocialNetwork(data[1].embed_code, idx);
-                  }
-                });
-              }
+              post => Object.entries(post).map((data, idx) => {
+                if (data[0] === "blog_content" && data[1] !== null) {
+                  return createContent(data[1].blog_post_content, idx);
+                }
+                if (data[0] === "image_carousel" && data[1] !== null) {
+                  return createCarousel(data[1].image, idx);
+                }
+                if (data[0] === "blog_quotes" && data[1] !== null) {
+                  return createQuotes(data[1].quote, idx);
+                }
+                if (data[0] === "social_network_embed" && data[1] !== null) {
+                  return createSocialNetwork(data[1].embed_code, idx);
+                }
+              }),
             )}
           </div>
         </div>

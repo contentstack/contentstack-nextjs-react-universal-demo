@@ -22,7 +22,7 @@ class BlogPosts extends React.Component {
   }
 
   render() {
-    return <BlogTemplate page={this.props.data} />;
+    return < BlogTemplate page={this.props.data} />;
   }
 }
 export default BlogPosts;

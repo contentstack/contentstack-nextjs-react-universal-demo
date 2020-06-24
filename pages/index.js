@@ -1,7 +1,10 @@
+/* eslint-disable consistent-return */
+/* eslint-disable react/prop-types */
 // import Head from "next/head";
 import React from "react";
 import Stack from "../sdk-plugins/index";
-import Homepage from "../templates/Homepage"
+import Homepage from "../templates/Homepage";
+
 class Home extends React.Component {
   static async getInitialProps() {
     try {
@@ -11,9 +14,10 @@ class Home extends React.Component {
       console.error(error);
     }
   }
+
   render() {
     return (
-      <Homepage page={this.props.data}/>
+      <Homepage page={this.props.data} />
     );
   }
 }

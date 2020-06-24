@@ -1,7 +1,9 @@
-// import Head from "next/head";
+/* eslint-disable react/prop-types */
+/* eslint-disable consistent-return */
 import React from "react";
 import Stack from "../sdk-plugins/index";
 import Contactpage from "../templates/Contactpage";
+
 class Contact extends React.Component {
   static async getInitialProps() {
     try {
@@ -11,6 +13,7 @@ class Contact extends React.Component {
       console.error(error);
     }
   }
+
   render() {
     return <Contactpage page={this.props.data} />;
   }
