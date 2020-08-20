@@ -5,9 +5,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3200",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 3200",
+    "start": "next start",
     "lint": "eslint pages/**/*.js templates/**/*.js"
   },
   "dependencies": {
