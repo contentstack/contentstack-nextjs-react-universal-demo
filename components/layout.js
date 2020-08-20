@@ -1,6 +1,11 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react/prop-types */
+import Head from 'next/head';
 import Header from "./header";
 import Footer from "./footer";
-import Head from 'next/head'
+
 class Layout extends React.Component {
   render() {
     return (
@@ -22,7 +27,8 @@ class Layout extends React.Component {
         <main>{this.props.children}</main>
         <Footer footer={this.props.footer} />
 
-        <style jsx>{`
+        <style jsx>
+          {`
           body {
             font-family: "Open Sans", sans-serif;
           }
@@ -30,7 +36,8 @@ class Layout extends React.Component {
             width: 100%;
             margin: 0 auto;
           }
-        `}</style>
+        `}
+        </style>
       </div>
     );
   }

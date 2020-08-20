@@ -33,7 +33,6 @@ class Blogpage extends React.Component {
                       alt={list.blog_list.blog_image.filename}
                     />
                   </div>
-                  {" "}
                 </div>
                 <div className="rightSection">
                   <div

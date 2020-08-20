@@ -1,11 +1,12 @@
-const Contentstack = require("contentstack")
+const Contentstack = require("contentstack");
+
 export default {
   getEntry(ctUid) {
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
       const Stack = Contentstack.Stack({
-        api_key: process.env.api_key,
-        delivery_token: process.env.delivery_token,
-        environment: process.env.environment
+        api_key: "blt3d760ac5ff7f3ff6",
+        delivery_token: "cs8e7b7ddf048ea2d6c86e69b6",
+        environment: "development",
       });
       Stack.ContentType(ctUid)
         .Query()
@@ -13,12 +14,11 @@ export default {
         .toJSON()
         .find()
         .then(
-          function success(result) {   
+          (result) => {
             resolve(result);
           },
-          function error(error) {}
+          error => reject(error),
         );
     });
-   
-  }
+  },
 };

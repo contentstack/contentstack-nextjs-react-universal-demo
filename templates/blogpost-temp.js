@@ -19,6 +19,7 @@ class BlogTemplate extends React.Component {
     function createCarousel(images, id) {
       return (
         <div style={{ padding: '12px 12px' }} key={id}>
+          <h2 className="sliderTitle"> Slide Show</h2>
           <Carousel
             showArrows
             showThumbs={false}
@@ -43,6 +44,7 @@ class BlogTemplate extends React.Component {
     function createQuotes(data, idx) {
       return (
         <div className="blogQuotes" key={idx}>
+          <h2 className="quotezTitle"> Quotes</h2>
           <blockquote
             className="otroBlockquote"
             dangerouslySetInnerHTML={{ __html: data }}
@@ -52,11 +54,13 @@ class BlogTemplate extends React.Component {
     }
     function createSocialNetwork(data, idx) {
       return (
-        <div
-          className="embededCodes"
-          key={idx}
-          dangerouslySetInnerHTML={{ __html: data }}
-        />
+        <div key={idx}>
+          <h2 className="socialTitle"> Social Network</h2>
+          <div
+            className="embededCodes"
+            dangerouslySetInnerHTML={{ __html: data }}
+          />
+        </div>
       );
     }
 
