@@ -14,9 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "contentstack": "^3.4.0",
+    "dotenv": "^8.2.0",
     "express": "^4.15.2",
     "next": "^4.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
-}
+  }
 }
