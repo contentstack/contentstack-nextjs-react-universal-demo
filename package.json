@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 4000",
+  "heroku-postbuild": "npm run build",
     "lint": "eslint pages/**/*.js templates/**/*.js"
   },
   "dependencies": {
