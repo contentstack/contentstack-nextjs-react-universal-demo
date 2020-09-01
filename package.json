@@ -1,17 +1,35 @@
 {
-  "name": "contentstack-nextjs-react-universal-demo",
-  "version": "0.1.0",
+  "name": "@contentstack/contentstack-nextjs-react-universal-demo",
+  "description": "Nextjs example for contentstack integration",
+  "author": "Contentstack",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p 4000",
+  "heroku-postbuild": "npm run build",
+    "lint": "eslint pages/**/*.js templates/**/*.js"
   },
   "dependencies": {
-    "contentstack": "^3.8.1",
+    "contentstack": "^3.10.0",
     "fs": "0.0.1-security",
-    "next": "9.3.4",
+    "next": "9.4.4",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-responsive-carousel": "^3.2.8"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.5",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.10.0",
+    "prettier": "^1.13.7",
+    "prettier-eslint": "^8.8.2"
   }
 }

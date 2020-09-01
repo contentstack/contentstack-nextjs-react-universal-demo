@@ -1,23 +1,25 @@
+/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-array-index-key */
 import React from "react";
+
 class Header extends React.Component {
   render() {
-    const nav = this.props.header.nav_menu.link.map((item, index) => {
-      return (
-        <a href={item.href} key={index}>
-          {item.title}
-        </a>
-      );
-    });
+    const nav = this.props.header.nav_menu.link.map((item, index) => (
+      <a href={item.href} key={index}>
+        {item.title}
+      </a>
+    ));
     return (
-        <header>
-          <a className="logo" href="/">
-            <span className="logo-text">
-              <img src={this.props.header.logo_image.url} alt={this.props.header.logo_image.filename} style={{height:"50px"}}/>
-              <span>{this.props.header.logo_title}</span>
-            </span>
-          </a>
-          <nav className="nav-menu">{nav}</nav>
-        </header>
+      <header>
+        <a className="logo" href="/">
+          <span className="logoText">
+            <i className="fa fa-file-code-o" aria-hidden="true" />
+            {this.props.header.logo_title}
+          </span>
+        </a>
+        <nav className="navMenu">{nav}</nav>
+      </header>
     );
   }
 }
