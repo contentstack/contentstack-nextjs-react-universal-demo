@@ -1,24 +1,32 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable max-len */
 /* eslint-disable array-callback-return */
 /* eslint-disable consistent-return */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-danger */
-/* eslint-disable import/extensions */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/jsx-no-duplicate-props */
 import React from "react";
-import Layout from "../components/layout.js";
 
 const { Carousel } = require("react-responsive-carousel");
 
+function dateSetter(params) {
+  const date = new Date(params);
+  const yy = new Intl.DateTimeFormat("en", { year: "numeric" }).format(date);
+  const mm = new Intl.DateTimeFormat("en", { month: "short" }).format(date);
+  const dd = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(date);
+  return `${mm}-${dd}-${yy}`;
+}
+
 class BlogTemplate extends React.Component {
   render() {
-    const { result } = this.props.page;
+    const result = this.props.page;
     function createContent(data, idx) {
       return <div key={idx} dangerouslySetInnerHTML={{ __html: data }} />;
     }
     function createCarousel(images, id) {
       return (
-        <div style={{ padding: '12px 12px' }} key={id}>
+        <div style={{ padding: "12px 12px" }} key={id}>
           <h2 className="sliderTitle"> Slide Show</h2>
           <Carousel
             showArrows
@@ -54,7 +62,7 @@ class BlogTemplate extends React.Component {
     }
     function createSocialNetwork(data, idx) {
       return (
-        <div key={idx}>
+        <div key={idx} className="socialNetworl">
           <h2 className="socialTitle"> Social Network</h2>
           <div
             className="embededCodes"
@@ -65,40 +73,46 @@ class BlogTemplate extends React.Component {
     }
 
     return (
-      <Layout
-        header={this.props.page.result.reference_header[0]}
-        footer={this.props.page.result.reference_footer[0]}
-      >
-        <div className="blogListcontainer">
-          <div className="heroBanner">
-            <img
-              className="bannerImage"
-              src={result.hero_banner[0].banner_title_only.image.url}
-              alt={result.hero_banner[0].banner_title_only.image.filename}
-              height="550px"
-            />
-          </div>
-          <div className="blogContent">
-            <h2 className="blogTitle">{result.title}</h2>
-            {result.modular_blocks[0].blog_post_page.blog_post.map(
-              post => Object.entries(post).map((data, idx) => {
-                if (data[0] === "blog_content" && data[1] !== null) {
-                  return createContent(data[1].blog_post_content, idx);
-                }
-                if (data[0] === "image_carousel" && data[1] !== null) {
-                  return createCarousel(data[1].image, idx);
-                }
-                if (data[0] === "blog_quotes" && data[1] !== null) {
-                  return createQuotes(data[1].quote, idx);
-                }
-                if (data[0] === "social_network_embed" && data[1] !== null) {
-                  return createSocialNetwork(data[1].embed_code, idx);
-                }
-              }),
-            )}
-          </div>
+      <div className="blogListcontainer">
+        <div className="heroBanner">
+          <ul>
+            <li>
+              <img
+                className="bannerImage"
+                src={result.hero_banner[0].banner_title_only.image.url}
+                alt={result.hero_banner[0].banner_title_only.image.filename}
+                height="550px"
+              />
+              <div className="bannerContent">
+                <h1>{result.title}</h1>
+                <div>
+                  <span className="blogPostTimeStamp">{dateSetter(result._owner.created_at)}</span>
+                  ,
+                  <span className="blogpost-author">
+                    {`${result._owner.first_name} ${result._owner.last_name}`}
+                  </span>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-      </Layout>
+        <div className="blogContent">
+          {result.modular_blocks[0].blog_post_page.blog_post.map(post => Object.entries(post).map((data, idx) => {
+            if (data[0] === "blog_content" && data[1] !== null) {
+              return createContent(data[1].blog_post_content, idx);
+            }
+            if (data[0] === "image_carousel" && data[1] !== null) {
+              return createCarousel(data[1].image, idx);
+            }
+            if (data[0] === "blog_quotes" && data[1] !== null) {
+              return createQuotes(data[1].quote, idx);
+            }
+            if (data[0] === "social_network_embed" && data[1] !== null) {
+              return createSocialNetwork(data[1].embed_code, idx);
+            }
+          }))}
+        </div>
+      </div>
     );
   }
 }

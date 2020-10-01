@@ -2,7 +2,9 @@
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/prop-types */
-import Head from 'next/head';
+
+import React from "react";
+import Head from "next/head";
 import Header from "./header";
 import Footer from "./footer";
 
@@ -23,20 +25,20 @@ class Layout extends React.Component {
             rel="stylesheet"
           />
         </Head>
-        <Header header={this.props.header} />
+        {this.props.header ? <Header header={this.props.header} /> : ""}
         <main>{this.props.children}</main>
-        <Footer footer={this.props.footer} />
+        {this.props.footer ? <Footer footer={this.props.footer} /> : ""}
 
         <style jsx>
           {`
-          body {
-            font-family: "Open Sans", sans-serif;
-          }
-          #asdf4534 {
-            width: 100%;
-            margin: 0 auto;
-          }
-        `}
+            body {
+              font-family: "Open Sans", sans-serif;
+            }
+            #asdf4534 {
+              width: 100%;
+              margin: 0 auto;
+            }
+          `}
         </style>
       </div>
     );

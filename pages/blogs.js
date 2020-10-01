@@ -4,17 +4,21 @@
 // import Head from "next/head";
 import React from "react";
 import Stack from '../sdk-plugins/index.js';
+import Layout from "../components/layout";
 import Blogpage from "../templates/Blogpage";
 
 class Blogs extends React.Component {
   static async getInitialProps() {
     try {
       const result = await Stack.getEntry("blog_posts");
-      const data = result[0].filter(obj => obj.url === "/blog-list");
+      const blogs = await Stack.getEntry('blogs');
+      const header = await Stack.getEntry('header');
+      const footer = await Stack.getEntry('footer');
+      const allposts = result[0].filter(obj => obj.url !== "/blog-list");
 
       return {
         data: {
-          result: data[0],
+          header, footer, blogs, allpost: allposts,
         },
       };
     } catch (error) {
@@ -23,7 +27,14 @@ class Blogs extends React.Component {
   }
 
   render() {
-    return <Blogpage page={this.props.data} />;
+    return (
+      <Layout header={this.props.data.header[0][0]} footer={this.props.data.footer[0][0]}>
+        <Blogpage
+          blogs={this.props.data.blogs[0][0]}
+          allpost={this.props.data.allpost}
+        />
+      </Layout>
+    );
   }
 }
 

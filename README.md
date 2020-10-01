@@ -8,11 +8,11 @@ About Contentstack: Contentstack is a headless CMS with an API-first approach th
 About this project: Create a professional website using Next.js and Contentstack.
 
 
-![banner](https://images.contentstack.io/v3/assets/blt3d760ac5ff7f3ff6/blt0eda5fe69567631d/5f4ba8fad3f9000eac80c00a/sample-app-nextjs.png "banner.png")
+![banner](https://images.contentstack.io/v3/assets/blt3d760ac5ff7f3ff6/blt8bce4b3c0f42fd60/5f75d26f02e6b80ebf8ffa1e/sample-app-nextjs.png "banner.png")
 
 ## Live Demo
 
-You can check the [live demo](https://contentstack-nextjs-sample-app.herokuapp.com/) to get first-hand experience of the website.
+You can check the [live demo](https://sample-apps-nextjs-demo-q0vt4q1y2.vercel.app/) to get first-hand experience of the website.
 
 
 ## Tutorial
