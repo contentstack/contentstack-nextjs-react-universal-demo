@@ -1,25 +1,66 @@
-const Contentstack = require("contentstack");
+const contentstack = require("contentstack");
 
+const Stack = process.env.API_KEY && process.env.DELIVERY_TOKEN && process.env.ENVIRONMENT
+  ? contentstack.Stack({
+    api_key: process.env.API_KEY,
+    delivery_token: process.env.DELIVERY_TOKEN,
+    environment: process.env.ENVIRONMENT,
+    region: process.env.REGION,
+  }) : "";
 export default {
-  getEntry(ctUid) {
+  getEntryWithRef(ctUid, ref, locale) {
     return new Promise((resolve, reject) => {
-      const Stack = Contentstack.Stack({
-        api_key: process.env.api_key,
-        delivery_token: process.env.delivery_token,
-        environment: process.env.environment,
-        region: process.env.region,
-      });
       Stack.ContentType(ctUid)
         .Query()
-        .addParam("include_owner", "true")
+        .language(locale)
+        .includeReference(ref)
+        .includeOwner()
         .toJSON()
         .find()
         .then(
           (result) => {
             resolve(result);
           },
-          error => reject(error),
+          (error) => {
+            reject(error);
+          },
         );
+    });
+  },
+  getEntry(ctUid, locale) {
+    return new Promise((resolve, reject) => {
+      Stack.ContentType(ctUid)
+        .Query()
+        .language(locale)
+        .includeOwner()
+        .toJSON()
+        .find()
+        .then(
+          (result) => {
+            resolve(result);
+          },
+          (error) => {
+            reject(error);
+          },
+        );
+    });
+  },
+  getSpecificEntry(ctUid, entryUrl, locale) {
+    return new Promise((resolve, reject) => {
+      const blogQuery = Stack.ContentType(ctUid)
+        .Query()
+        .language(locale)
+        .includeOwner()
+        .toJSON();
+      const data = blogQuery.where("url", `${entryUrl}`).find();
+      data.then(
+        (result) => {
+          resolve(result[0]);
+        },
+        (error) => {
+          reject(error);
+        },
+      );
     });
   },
 };

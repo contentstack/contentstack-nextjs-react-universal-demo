@@ -26,7 +26,9 @@ class Blogpage extends React.Component {
                 src={this.props.blogs.hero_banner[0].banner_image.url}
                 alt={this.props.blogs.hero_banner[0].banner_image.filename}
               />
-              <div className="bannerContent"><h1>Blog Lists</h1></div>
+              <div className="bannerContent">
+                <h1>Blog Lists</h1>
+              </div>
             </li>
           </ul>
         </div>
@@ -37,22 +39,24 @@ class Blogpage extends React.Component {
                 <div>
                   <img
                     className="listImages"
-                    src={list.hero_banner[0].banner_title_only.image.url}
-                    alt={list.hero_banner[0].banner_title_only.image.filename}
+                    src={list.hero_banner.banner_image.url}
+                    alt={list.hero_banner.banner_image.filename}
                   />
                 </div>
               </div>
               <div className="rightSection">
                 <h2>{list.title}</h2>
                 <div>
-                  <span className="timeStamp">{dateSetter(list._owner.created_at)}</span>
+                  <span className="timeStamp">
+                    {dateSetter(list._owner.created_at)}
+                  </span>
                   ,
                   <span className="post-author">
                     {`${list._owner.first_name} ${list._owner.last_name}`}
                   </span>
                 </div>
                 <p className="blogPost">
-                  {`${list.modular_blocks[0].blog_post_page.blog_post[0].blog_content.blog_post_content.slice(
+                  {`${list.blog_body[0].blog_post_page.blog_post[0].rich_text_editor.rich_text.slice(
                     3,
                     150,
                   )}...`}
@@ -67,14 +71,16 @@ class Blogpage extends React.Component {
               <div className="leftSection">
                 <h2>{list.title}</h2>
                 <div>
-                  <span className="timeStamp">{dateSetter(list._owner.created_at)}</span>
+                  <span className="timeStamp">
+                    {dateSetter(list._owner.created_at)}
+                  </span>
                   ,
                   <span className="post-author">
                     {`${list._owner.first_name} ${list._owner.last_name}`}
                   </span>
                 </div>
                 <p className="blogPost">
-                  {`${list.modular_blocks[0].blog_post_page.blog_post[0].blog_content.blog_post_content.slice(
+                  {`${list.blog_body[0].blog_post_page.blog_post[0].rich_text_editor.rich_text.slice(
                     3,
                     150,
                   )}...`}
@@ -87,8 +93,8 @@ class Blogpage extends React.Component {
                 <div>
                   <img
                     className="listImages"
-                    src={list.hero_banner[0].banner_title_only.image.url}
-                    alt={list.hero_banner[0].banner_title_only.image.filename}
+                    src={list.hero_banner.banner_image.url}
+                    alt={list.hero_banner.banner_image.filename}
                   />
                 </div>
               </div>

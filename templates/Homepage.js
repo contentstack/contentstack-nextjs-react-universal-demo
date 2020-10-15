@@ -21,7 +21,7 @@ class Homepage extends React.Component {
         </ul>
       </div>
     ));
-    const section_heading = this.props.page.section_heading.heading.map(
+    const section_heading = this.props.page.portfolio_section.heading.map(
       (heading, index) => (
         <div key={index} className="portBx clearfix">
           <div className="image">
@@ -47,8 +47,8 @@ class Homepage extends React.Component {
               </div>
               <div className="portpolio clearfix">
                 <div className="container clearfix">
-                  <h2 className="portpolioTitle">{this.props.page.section_heading.title}</h2>
-                  <h3 className="portpolioDesc">{this.props.page.section_heading.description}</h3>
+                  <h2 className="portpolioTitle">{this.props.page.portfolio_section.title}</h2>
+                  <h3 className="portpolioDesc">{this.props.page.portfolio_section.description}</h3>
                   {section_heading}
                 </div>
               </div>

@@ -1,3 +1,8 @@
+/* eslint-disable prefer-const */
+/* eslint-disable consistent-return */
+/* eslint-disable guard-for-in */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-undef */
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/react-in-jsx-scope */
@@ -10,6 +15,15 @@ import Footer from "./footer";
 
 class Layout extends React.Component {
   render() {
+    function metaData(seo) {
+      let metaArr = [];
+      for (const key in seo) {
+        metaArr.push(
+          <meta name={key.split("meta_")[1]} content={seo[key]} key={key} />,
+        );
+      }
+      return metaArr;
+    }
     return (
       <div id="asdf4534">
         <Head>
@@ -24,6 +38,7 @@ class Layout extends React.Component {
             type="text/css"
             rel="stylesheet"
           />
+          {this.props.seo ? metaData(this.props.seo) : null}
         </Head>
         {this.props.header ? <Header header={this.props.header} /> : ""}
         <main>{this.props.children}</main>

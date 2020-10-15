@@ -35,11 +35,11 @@ class BlogTemplate extends React.Component {
             thumbWidth="200px"
             showArrows
           >
-            {images.map((image, idx) => (
+            {images.map((img, idx) => (
               <div key={idx} height="200px" width="200px">
                 <img
-                  src={image.url}
-                  alt={image.filename}
+                  src={img.image.url}
+                  alt={img.image.filename}
                   width="200px"
                   height="350px"
                 />
@@ -71,7 +71,6 @@ class BlogTemplate extends React.Component {
         </div>
       );
     }
-
     return (
       <div className="blogListcontainer">
         <div className="heroBanner">
@@ -79,14 +78,16 @@ class BlogTemplate extends React.Component {
             <li>
               <img
                 className="bannerImage"
-                src={result.hero_banner[0].banner_title_only.image.url}
-                alt={result.hero_banner[0].banner_title_only.image.filename}
+                src={result.hero_banner.banner_image.url}
+                alt={result.hero_banner.banner_image.filename}
                 height="550px"
               />
               <div className="bannerContent">
                 <h1>{result.title}</h1>
                 <div>
-                  <span className="blogPostTimeStamp">{dateSetter(result._owner.created_at)}</span>
+                  <span className="blogPostTimeStamp">
+                    {dateSetter(result._owner.created_at)}
+                  </span>
                   ,
                   <span className="blogpost-author">
                     {`${result._owner.first_name} ${result._owner.last_name}`}
@@ -97,14 +98,14 @@ class BlogTemplate extends React.Component {
           </ul>
         </div>
         <div className="blogContent">
-          {result.modular_blocks[0].blog_post_page.blog_post.map(post => Object.entries(post).map((data, idx) => {
-            if (data[0] === "blog_content" && data[1] !== null) {
-              return createContent(data[1].blog_post_content, idx);
+          {result.blog_body[0].blog_post_page.blog_post.map(post => Object.entries(post).map((data, idx) => {
+            if (data[0] === "rich_text_editor" && data[1] !== null) {
+              return createContent(data[1].rich_text, idx);
             }
             if (data[0] === "image_carousel" && data[1] !== null) {
-              return createCarousel(data[1].image, idx);
+              return createCarousel(data[1].images, idx);
             }
-            if (data[0] === "blog_quotes" && data[1] !== null) {
+            if (data[0] === "quotes" && data[1] !== null) {
               return createQuotes(data[1].quote, idx);
             }
             if (data[0] === "social_network_embed" && data[1] !== null) {

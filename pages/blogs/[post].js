@@ -11,18 +11,13 @@ class BlogPosts extends React.Component {
   static async getInitialProps({ query }) {
     const postLink = query.post;
     try {
-      if (postLink === "/blog-list") throw "404";
-      const result = await Stack.getEntry("blog_posts");
+      const result = await Stack.getSpecificEntry("blog_posts", `/${postLink}`, "en-us");
 
-      const header = await Stack.getEntry("header");
-      const footer = await Stack.getEntry("footer");
-      // return { data: { result, header, footer } };
-      let data = result[0];
-      data = data.filter(obj => obj.url === `/${postLink}`);
-      if (data.length === 0) throw "404";
+      const header = await Stack.getEntry("header", "en-us");
+      const footer = await Stack.getEntry("footer", "en-us");
       return {
         data: {
-          result: data[0],
+          result: result[0],
           header,
           footer,
         },
@@ -37,6 +32,7 @@ class BlogPosts extends React.Component {
       <Layout
         header={this.props.data.header[0][0]}
         footer={this.props.data.footer[0][0]}
+        seo={this.props.data.result.seo}
       >
         <BlogTemplate page={this.props.data.result} />
       </Layout>
