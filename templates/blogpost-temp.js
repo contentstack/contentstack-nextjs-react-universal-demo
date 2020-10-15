@@ -43,6 +43,18 @@ class BlogTemplate extends React.Component {
                   width="200px"
                   height="350px"
                 />
+                <div className="subcriptionLink legend" style={{ background: "transparent", opacity: "1" }}>
+                  {img.link.map((li, key) => (
+                    <a
+                      href={li.url}
+                      className="button1 bouncy"
+                      key={key}
+                      style={{ animationDelay: `${key * 0.07}s` }}
+                    >
+                      {li.title}
+                    </a>
+                  ))}
+                </div>
               </div>
             ))}
           </Carousel>
