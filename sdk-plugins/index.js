@@ -5,8 +5,9 @@ const Stack = process.env.API_KEY && process.env.DELIVERY_TOKEN && process.env.E
     api_key: process.env.API_KEY,
     delivery_token: process.env.DELIVERY_TOKEN,
     environment: process.env.ENVIRONMENT,
-    region: process.env.REGION?process.env.REGION:"us",
+    region: process.env.REGION ? process.env.REGION : "us",
   }) : "";
+
 export default {
   getEntryWithRef(ctUid, ref, locale) {
     return new Promise((resolve, reject) => {

@@ -7,12 +7,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 4000",
+    "start": "next start",
     "heroku-postbuild": "npm run build",
     "lint": "eslint pages/**/*.js templates/**/*.js"
   },
   "dependencies": {
-    "contentstack": "^3.10.0",
+    "contentstack": "^3.11.0",
     "fs": "0.0.1-security",
     "next": "9.4.4",
     "react": "16.13.1",

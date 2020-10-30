@@ -19,7 +19,6 @@ class About extends React.Component {
   }
 
   render() {
-    console.log(this.props.data.result[0][0]);
     return (
       <Layout
         header={this.props.data.header[0][0]}
