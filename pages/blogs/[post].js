@@ -11,7 +11,11 @@ class BlogPosts extends React.Component {
   static async getInitialProps({ query }) {
     const postLink = query.post;
     try {
-      const result = await Stack.getSpecificEntry("blog_posts", `/${postLink}`, "en-us");
+      const result = await Stack.getSpecificEntry(
+        "blog_posts",
+        `/blogs/${postLink}`,
+        "en-us",
+      );
 
       const header = await Stack.getEntry("header", "en-us");
       const footer = await Stack.getEntry("footer", "en-us");

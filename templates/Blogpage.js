@@ -48,7 +48,7 @@ class Blogpage extends React.Component {
                 <h2>{list.title}</h2>
                 <div>
                   <span className="timeStamp">
-                    {dateSetter(list._owner.created_at)}
+                    {dateSetter(list.created_at)}
                   </span>
                   ,
                   <span className="post-author">
@@ -61,7 +61,7 @@ class Blogpage extends React.Component {
                     150,
                   )}...`}
                 </p>
-                <a className="postLink" href={`/blogs${list.url}`}>
+                <a className="postLink" href={`${list.url}`}>
                   Read More
                 </a>
               </div>
@@ -72,11 +72,11 @@ class Blogpage extends React.Component {
                 <h2>{list.title}</h2>
                 <div>
                   <span className="timeStamp">
-                    {dateSetter(list._owner.created_at)}
+                    {dateSetter(list.created_at)}
                   </span>
                   ,
                   <span className="post-author">
-                    {`${list._owner.first_name} ${list._owner.last_name}`}
+                    {list._owner ? `${list._owner.first_name} ${list._owner.last_name}` : ""}
                   </span>
                 </div>
                 <p className="blogPost">
@@ -85,7 +85,7 @@ class Blogpage extends React.Component {
                     150,
                   )}...`}
                 </p>
-                <a className="postLink" href={`/blogs${list.url}`}>
+                <a className="postLink" href={`${list.url}`}>
                   Read More
                 </a>
               </div>
