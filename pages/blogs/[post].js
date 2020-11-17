@@ -1,22 +1,29 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable consistent-return */
 /* eslint-disable no-throw-literal */
 /* eslint-disable import/extensions */
 import React from "react";
 import Stack from "../../sdk-plugins/index.js";
+import Layout from "../../components/layout";
 import BlogTemplate from "../../templates/blogpost-temp.js";
 
 class BlogPosts extends React.Component {
   static async getInitialProps({ query }) {
     const postLink = query.post;
     try {
-      if (postLink === '/blog-list') throw '404';
-      const result = await Stack.getEntry("blog_posts");
-      let data = result[0];
-      data = data.filter(obj => obj.url === `/${postLink}`);
-      if (data.length === 0) throw '404';
+      const result = await Stack.getSpecificEntry(
+        "blog_posts",
+        `/blogs/${postLink}`,
+        "en-us",
+      );
+
+      const header = await Stack.getEntry("header", "en-us");
+      const footer = await Stack.getEntry("footer", "en-us");
       return {
         data: {
-          result: data[0],
+          result: result[0],
+          header,
+          footer,
         },
       };
     } catch (error) {
@@ -25,7 +32,15 @@ class BlogPosts extends React.Component {
   }
 
   render() {
-    return <BlogTemplate page={this.props.data} />;
+    return (
+      <Layout
+        header={this.props.data.header[0][0]}
+        footer={this.props.data.footer[0][0]}
+        seo={this.props.data.result.seo}
+      >
+        <BlogTemplate page={this.props.data.result} />
+      </Layout>
+    );
   }
 }
 export default BlogPosts;

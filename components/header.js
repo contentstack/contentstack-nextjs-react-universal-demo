@@ -15,7 +15,7 @@ class Header extends React.Component {
         <a className="logo" href="/">
           <span className="logoText">
             <i className="fa fa-file-code-o" aria-hidden="true" />
-            {this.props.header.logo_title}
+            <span className="logoTitle">{this.props.header.logo_title}</span>
           </span>
         </a>
         <nav className="navMenu">{nav}</nav>

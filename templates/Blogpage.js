@@ -1,55 +1,107 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable react/no-danger */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/prefer-stateless-function */
 import React from "react";
-import Layout from "../components/layout";
+
+function dateSetter(params) {
+  const date = new Date(params);
+  const yy = new Intl.DateTimeFormat("en", { year: "numeric" }).format(date);
+  const mm = new Intl.DateTimeFormat("en", { month: "short" }).format(date);
+  const dd = new Intl.DateTimeFormat("en", { day: "2-digit" }).format(date);
+  return `${mm}-${dd}-${yy}`;
+}
 
 class Blogpage extends React.Component {
   render() {
-    const data = this.props.page.result;
+    const data = this.props.allpost;
     return (
-      <Layout
-        header={this.props.page.result.reference_header[0]}
-        footer={this.props.page.result.reference_footer[0]}
-      >
-        <div className="blogListcontainer">
-          <div className="heroBanner">
-            <img
-              className="bannerImage"
-              src={data.hero_banner[0].banner_title_only.image.url}
-              alt={data.hero_banner[0].banner_title_only.image.filename}
-            />
-          </div>
-          <h2 className="blogTitle">Blog List</h2>
-          <div className="bloglistContainer">
-            {data.modular_blocks.map((list, idx) => (
-              <div className="bloglist" key={idx}>
-                <div className="leftSection">
-                  <div>
-                    <img
-                      className="listImages"
-                      src={list.blog_list.blog_image.url}
-                      alt={list.blog_list.blog_image.filename}
-                    />
-                  </div>
-                </div>
-                <div className="rightSection">
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: list.blog_list.blog_details,
-                    }}
+      <div className="blogListcontainer">
+        <div className="heroBanner">
+          <ul>
+            <li>
+              <img
+                className="bannerImage"
+                src={this.props.blogs.hero_banner[0].banner_image.url}
+                alt={this.props.blogs.hero_banner[0].banner_image.filename}
+              />
+              <div className="bannerContent">
+                <h1>Blog Lists</h1>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div className="bloglistContainer">
+          {data.map((list, idx) => (idx % 2 === 0 ? (
+            <div className="bloglist" key={idx}>
+              <div className="leftSection">
+                <div>
+                  <img
+                    className="listImages"
+                    src={list.hero_banner.banner_image.url}
+                    alt={list.hero_banner.banner_image.filename}
                   />
-                  {" "}
-                  <a className="postLink" href={`/blogs${list.blog_list.cta.href}`}>
-                    {list.blog_list.cta.title}
-                  </a>
                 </div>
               </div>
-            ))}
-          </div>
+              <div className="rightSection">
+                <h2>{list.title}</h2>
+                <div>
+                  <span className="timeStamp">
+                    {dateSetter(list.created_at)}
+                  </span>
+                  ,
+                  <span className="post-author">
+                    {`${list._owner.first_name} ${list._owner.last_name}`}
+                  </span>
+                </div>
+                <p className="blogPost">
+                  {`${list.blog_body[0].blog_post_page.blog_post[0].rich_text_editor.rich_text.slice(
+                    3,
+                    150,
+                  )}...`}
+                </p>
+                <a className="postLink" href={`${list.url}`}>
+                  Read More
+                </a>
+              </div>
+            </div>
+          ) : (
+            <div className="bloglist" key={idx}>
+              <div className="leftSection">
+                <h2>{list.title}</h2>
+                <div>
+                  <span className="timeStamp">
+                    {dateSetter(list.created_at)}
+                  </span>
+                  ,
+                  <span className="post-author">
+                    {list._owner ? `${list._owner.first_name} ${list._owner.last_name}` : ""}
+                  </span>
+                </div>
+                <p className="blogPost">
+                  {`${list.blog_body[0].blog_post_page.blog_post[0].rich_text_editor.rich_text.slice(
+                    3,
+                    150,
+                  )}...`}
+                </p>
+                <a className="postLink" href={`${list.url}`}>
+                  Read More
+                </a>
+              </div>
+              <div className="rightSection">
+                <div>
+                  <img
+                    className="listImages"
+                    src={list.hero_banner.banner_image.url}
+                    alt={list.hero_banner.banner_image.filename}
+                  />
+                </div>
+              </div>
+            </div>
+          )))}
         </div>
-      </Layout>
+      </div>
     );
   }
 }

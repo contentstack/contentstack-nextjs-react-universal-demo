@@ -1,4 +1,4 @@
-[![Contentstack](https://www.contentstack.com/assets/blt440aad5a09c89b2f/contentstack_icon.svg)](https://www.contentstack.com/)
+[![Contentstack](https://camo.githubusercontent.com/d24f513afa94a4a762533d54a0f590300dbd0413/68747470733a2f2f7777772e636f6e74656e74737461636b2e636f6d2f646f63732f7374617469632f696d616765732f636f6e74656e74737461636b2e706e67)](https://www.contentstack.com/)
 
 
 # Build Website using Next.js and Contentstack
@@ -8,11 +8,11 @@ About Contentstack: Contentstack is a headless CMS with an API-first approach th
 About this project: Create a professional website using Next.js and Contentstack.
 
 
-![banner](https://images.contentstack.io/v3/assets/blt3d760ac5ff7f3ff6/blt0eda5fe69567631d/5f4ba8fad3f9000eac80c00a/sample-app-nextjs.png "banner.png")
+![banner](https://images.contentstack.io/v3/assets/blt3d760ac5ff7f3ff6/blt8bce4b3c0f42fd60/5f75d26f02e6b80ebf8ffa1e/sample-app-nextjs.png "banner.png")
 
 ## Live Demo
 
-You can check the [live demo](https://contentstack-nextjs-sample-app.herokuapp.com/) to get first-hand experience of the website.
+You can check the [live demo](https://sample-apps-nextjs-demo.now.sh/) to get first-hand experience of the website.
 
 
 ## Tutorial
