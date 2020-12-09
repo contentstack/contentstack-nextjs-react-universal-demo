@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/no-danger */
 /* eslint-disable react/no-array-index-key */
@@ -48,15 +49,15 @@ class Blogpage extends React.Component {
                 <h2>{list.title}</h2>
                 <div>
                   <span className="timeStamp">
-                    {dateSetter(list.created_at)}
+                    {dateSetter(list.publish_date)}
                   </span>
                   ,
                   <span className="post-author">
-                    {`${list._owner.first_name} ${list._owner.last_name}`}
+                    {list.author[0].title}
                   </span>
                 </div>
                 <p className="blogPost">
-                  {`${list.blog_body[0].blog_post_page.blog_post[0].rich_text_editor.rich_text.slice(
+                  {`${list.blog_body[0].rich_text_editor.rich_text.slice(
                     3,
                     150,
                   )}...`}
@@ -72,15 +73,15 @@ class Blogpage extends React.Component {
                 <h2>{list.title}</h2>
                 <div>
                   <span className="timeStamp">
-                    {dateSetter(list.created_at)}
+                    {dateSetter(list.publish_date)}
                   </span>
                   ,
                   <span className="post-author">
-                    {list._owner ? `${list._owner.first_name} ${list._owner.last_name}` : ""}
+                    {list.author[0].title}
                   </span>
                 </div>
                 <p className="blogPost">
-                  {`${list.blog_body[0].blog_post_page.blog_post[0].rich_text_editor.rich_text.slice(
+                  {`${list.blog_body[0].rich_text_editor.rich_text.slice(
                     3,
                     150,
                   )}...`}

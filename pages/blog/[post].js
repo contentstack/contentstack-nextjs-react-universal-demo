@@ -11,9 +11,10 @@ class BlogPosts extends React.Component {
   static async getInitialProps({ query }) {
     const postLink = query.post;
     try {
-      const result = await Stack.getSpecificEntry(
+      const result = await Stack.getSpecificEntryWihtRef(
         "blog_posts",
-        `/blogs/${postLink}`,
+        `/blog/${postLink}`,
+        'author',
         "en-us",
       );
 
