@@ -98,7 +98,7 @@ class BlogTemplate extends React.Component {
                 <h1>{result.title}</h1>
                 <div>
                   <span className="blogPostTimeStamp">
-                    {dateSetter(result.date)}
+                    {dateSetter(result.publish_date)}
                   </span>
                   ,
                   <span className="blogpost-author">
