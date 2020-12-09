@@ -49,7 +49,7 @@ class Blogpage extends React.Component {
                 <h2>{list.title}</h2>
                 <div>
                   <span className="timeStamp">
-                    {dateSetter(list.author[0].birth_date)}
+                    {dateSetter(list.date)}
                   </span>
                   ,
                   <span className="post-author">
@@ -73,7 +73,7 @@ class Blogpage extends React.Component {
                 <h2>{list.title}</h2>
                 <div>
                   <span className="timeStamp">
-                    {dateSetter(list.author[0].birth_date)}
+                    {dateSetter(list.date)}
                   </span>
                   ,
                   <span className="post-author">

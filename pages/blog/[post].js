@@ -13,7 +13,7 @@ class BlogPosts extends React.Component {
     try {
       const result = await Stack.getSpecificEntryWihtRef(
         "blog_posts",
-        `/blogs/${postLink}`,
+        `/blog/${postLink}`,
         'author',
         "en-us",
       );
