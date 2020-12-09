@@ -10,7 +10,7 @@ import Blogpage from "../templates/Blogpage";
 class Blogs extends React.Component {
   static async getInitialProps() {
     try {
-      const result = await Stack.getEntry("blog_posts", "en-us");
+      const result = await Stack.getEntryWithRef("blog_posts", 'author', "en-us");
       const blogs = await Stack.getEntry('blogs', "en-us");
       const header = await Stack.getEntry('header', "en-us");
       const footer = await Stack.getEntry('footer', "en-us");

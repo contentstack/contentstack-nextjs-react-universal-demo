@@ -33,7 +33,6 @@ export default {
       Stack.ContentType(ctUid)
         .Query()
         .language(locale)
-        .includeOwner()
         .toJSON()
         .find()
         .then(
@@ -51,7 +50,24 @@ export default {
       const blogQuery = Stack.ContentType(ctUid)
         .Query()
         .language(locale)
-        .includeOwner()
+        .toJSON();
+      const data = blogQuery.where("url", `${entryUrl}`).find();
+      data.then(
+        (result) => {
+          resolve(result[0]);
+        },
+        (error) => {
+          reject(error);
+        },
+      );
+    });
+  },
+  getSpecificEntryWihtRef(ctUid, entryUrl, ref, locale) {
+    return new Promise((resolve, reject) => {
+      const blogQuery = Stack.ContentType(ctUid)
+        .Query()
+        .language(locale)
+        .includeReference(ref)
         .toJSON();
       const data = blogQuery.where("url", `${entryUrl}`).find();
       data.then(

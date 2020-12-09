@@ -98,11 +98,11 @@ class BlogTemplate extends React.Component {
                 <h1>{result.title}</h1>
                 <div>
                   <span className="blogPostTimeStamp">
-                    {dateSetter(result._owner.created_at)}
+                    {dateSetter(result.author[0].birth_date)}
                   </span>
                   ,
                   <span className="blogpost-author">
-                    {`${result._owner.first_name} ${result._owner.last_name}`}
+                    {result.author[0].title}
                   </span>
                 </div>
               </div>
@@ -110,7 +110,7 @@ class BlogTemplate extends React.Component {
           </ul>
         </div>
         <div className="blogContent">
-          {result.blog_body[0].blog_post_page.blog_post.map(post => Object.entries(post).map((data, idx) => {
+          {result.blog_body.map(post => Object.entries(post).map((data, idx) => {
             if (data[0] === "rich_text_editor" && data[1] !== null) {
               return createContent(data[1].rich_text, idx);
             }
