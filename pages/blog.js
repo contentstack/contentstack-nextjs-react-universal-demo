@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-nested-ternary */
 /* eslint-disable consistent-return */
 /* eslint-disable import/extensions */
 /* eslint-disable react/prop-types */
@@ -10,11 +12,11 @@ import Blogpage from "../templates/Blogpage";
 class Blogs extends React.Component {
   static async getInitialProps() {
     try {
-      const result = await Stack.getEntryWithRef("blog_posts", 'author', "en-us");
+      let result = await Stack.getEntryWithRef("blog_posts", 'author', "en-us");
       const blogs = await Stack.getEntry('blogs', "en-us");
       const header = await Stack.getEntry('header', "en-us");
       const footer = await Stack.getEntry('footer', "en-us");
-
+      result = result.sort((prev, next) => prev.publish_date - next.publish_date);
       return {
         data: {
           header, footer, blogs, allpost: result[0],
